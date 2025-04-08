@@ -1,2 +1,31 @@
+<script src="https://store.united-arrows.co.jp/res/js/production/body_after.js"></script>
+	<script>
+		$(function () {
+			var ua_wmk = Cookies.get('ua_wmk'),
+				ua_user_wmk = Cookies.get('ua_user_wmk'),
+				ua_item_wmk = Cookies.get('ua_item_wmk'),
+				isLogined = sessionModule.isLoggedIn(), justLogined = sessionModule.isEnteredLoggedIn();
+
+			// ログイン直後にCookie(ua_user_wmk)を保存
+			if (isLogined && justLogined) {
+				if ("01" == "01") {
+					Cookies.set('ua_user_wmk', "10M1");
+					Cookies.set('ua_wmk', "10M1");
+				} else if ("01" == "02") {
+					Cookies.set('ua_user_wmk', "10W1");
+					Cookies.set('ua_wmk', "10W1");
+				} else {
+					Cookies.set('ua_user_wmk', "ALL");
+					Cookies.set('ua_wmk', "ALL");
+				}
+			}
+		})
+	</script>
+    <inject m:inject="m:doRender" m:name="_HEAD_SCRIPT">
+		<script src="assets/js/index.js"></script>
+	</inject>
+
+
 </body>
 </html>
+	

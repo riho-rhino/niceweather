@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja"
+	  xmlns:m="http://mayaa.seasar.org"
+	  m:extends="/components/layouts/layout-free/layout-free.html"
+	  class="store_${storeId} areatype_${area.areaType} ${area.localId.length() == 0 ? '': 'areaid_' + area.localId} ">
+
+<head>
+	<title m:inject="m:doRender" m:name="_TITLE">NICEWEATHER</title>
+    <inject m:inject="m:doRender" m:name="_HEAD_META">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width,initial-scale=1.6,maximum-scale=1.0,user-scalable=yes">
+        <meta name="author" content="UNITED ARROWS LTD.">
+        <meta name="robots" content="index, follow">
+        <meta name="keywords" lang="ja" content="BEAUTY&amp;amp;YOUTH, UNITED　ARROWS, ビューティー＆ユース, ユナイテッドアローズ">
+        <meta name="description" lang="ja" content="">
+        <meta property="og:title" content="NICEWEATHER">
+        <meta property="og:description" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://store.united-arrows.co.jp/s/brand/nw/feature/2025/launch/">
+        <meta property="og:image" content="https://store.united-arrows.co.jp/s/brand/nw/feature/2025/launch/assets/img/ogp.jpg">
+        <meta property="og:site_name" content="ビューティ＆ユース｜UNITED ARROWS ONLINE">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="NICEWEATHER">
+        <meta name="twitter:description" content="">
+	</inject>
+	<!-- CSS -->
+	<inject m:inject="m:doRender" m:name="_HEAD_CSS">
+    <link rel="stylesheet" href="assets/css/style.css">
+	</inject>
+
+	<!-- JS -->
+	<inject m:inject="m:doRender" m:name="_HEAD_SCRIPT">
+    <!-- font -->
+
+	</inject>
+</head>
+<body>

@@ -1,7 +1,126 @@
 
 
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix=”og: http://ogp.me/ns#”>
+  
+</head>
+<body>
 
-<img src="/static/docs/lepsim/pages/2024spring" alt="">
+<!DOCTYPE html>
+<html lang="ja"
+	  xmlns:m="http://mayaa.seasar.org"
+	  m:extends="/components/layouts/layout-free/layout-free.html"
+	  class="store_${storeId} areatype_${area.areaType} ${area.localId.length() == 0 ? '': 'areaid_' + area.localId} ">
 
-<script src="/static/docs/lepsim/pages/2024springassets/js/index.js"></script>
+<head>
+	<title m:inject="m:doRender" m:name="_TITLE">NICEWEATHER</title>
+    <inject m:inject="m:doRender" m:name="_HEAD_META">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width,initial-scale=1.6,maximum-scale=1.0,user-scalable=yes">
+        <meta name="author" content="UNITED ARROWS LTD.">
+        <meta name="robots" content="index, follow">
+        <meta name="keywords" lang="ja" content="BEAUTY&amp;amp;YOUTH, UNITED　ARROWS, ビューティー＆ユース, ユナイテッドアローズ">
+        <meta name="description" lang="ja" content="">
+        <meta property="og:title" content="NICEWEATHER">
+        <meta property="og:description" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://store.united-arrows.co.jp/s/brand/nw/feature/2025/launch/">
+        <meta property="og:image" content="https://store.united-arrows.co.jp/s/brand/nw/feature/2025/launch/assets/img/ogp.jpg">
+        <meta property="og:site_name" content="ビューティ＆ユース｜UNITED ARROWS ONLINE">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="NICEWEATHER">
+        <meta name="twitter:description" content="">
+	</inject>
+	<!-- CSS -->
+	<inject m:inject="m:doRender" m:name="_HEAD_CSS">
+    <link rel="stylesheet" href="assets/css/style.css">
+	</inject>
 
+	<!-- JS -->
+	<inject m:inject="m:doRender" m:name="_HEAD_SCRIPT">
+    <!-- font -->
+
+	</inject>
+</head>
+<body>
+  <main class="mx-auto max-w-pc-full">
+		<inject m:inject="m:doRender" m:name="_APP_MAIN">
+			<!-- CONTENTS START -->
+			
+			
+			
+			
+      
+			
+      <!-- CONTENTS END -->
+
+		</inject>
+	</main>
+  <script src="https://store.united-arrows.co.jp/res/js/production/body_after.js"></script>
+	<script>
+		$(function () {
+			var ua_wmk = Cookies.get('ua_wmk'),
+				ua_user_wmk = Cookies.get('ua_user_wmk'),
+				ua_item_wmk = Cookies.get('ua_item_wmk'),
+				isLogined = sessionModule.isLoggedIn(), justLogined = sessionModule.isEnteredLoggedIn();
+
+			// ログイン直後にCookie(ua_user_wmk)を保存
+			if (isLogined && justLogined) {
+				if ("01" == "01") {
+					Cookies.set('ua_user_wmk', "10M1");
+					Cookies.set('ua_wmk', "10M1");
+				} else if ("01" == "02") {
+					Cookies.set('ua_user_wmk', "10W1");
+					Cookies.set('ua_wmk', "10W1");
+				} else {
+					Cookies.set('ua_user_wmk', "ALL");
+					Cookies.set('ua_wmk', "ALL");
+				}
+			}
+		})
+	</script>
+    <inject m:inject="m:doRender" m:name="_HEAD_SCRIPT">
+		<script src="assets/js/index.js"></script>
+	</inject>
+
+
+</body>
+</html>
+	
+
+  
+
+<script src="https://store.united-arrows.co.jp/res/js/production/body_after.js"></script>
+	<script>
+		$(function () {
+			var ua_wmk = Cookies.get('ua_wmk'),
+				ua_user_wmk = Cookies.get('ua_user_wmk'),
+				ua_item_wmk = Cookies.get('ua_item_wmk'),
+				isLogined = sessionModule.isLoggedIn(), justLogined = sessionModule.isEnteredLoggedIn();
+
+			// ログイン直後にCookie(ua_user_wmk)を保存
+			if (isLogined && justLogined) {
+				if ("01" == "01") {
+					Cookies.set('ua_user_wmk', "10M1");
+					Cookies.set('ua_wmk', "10M1");
+				} else if ("01" == "02") {
+					Cookies.set('ua_user_wmk', "10W1");
+					Cookies.set('ua_wmk', "10W1");
+				} else {
+					Cookies.set('ua_user_wmk', "ALL");
+					Cookies.set('ua_wmk', "ALL");
+				}
+			}
+		})
+	</script>
+    <inject m:inject="m:doRender" m:name="_HEAD_SCRIPT">
+		<script src="assets/js/index.js"></script>
+	</inject>
+
+
+</body>
+</html>
+	

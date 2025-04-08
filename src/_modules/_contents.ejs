@@ -1,88 +1,17 @@
-<!DOCTYPE html>
-<html
-  lang="ja"
-  xmlns:m="http://mayaa.seasar.org"
-  m:extends="/components/layouts/layout-free/layout-free.html"
-  class="store_${storeId} areatype_${area.areaType} ${area.localId.length() == 0 ? '': 'areaid_' + area.localId} "
->
-<head>
-<title m:inject="m:doRender" m:name="_TITLE">ページタイトルを記載ください。</title>
-<!-- non _HEAD_META "/non _HEAD_META" までの下記内容は共通テンプレート側で設置されます。 -->
-<meta http-equiv="content-type" charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link href="https://store.united-arrows.co.jp/res/img/common/home_icon.png" rel="icon" type="image/png" sizes="180x180">
-<link href="https://store.united-arrows.co.jp/res/img/common/home_icon.png" rel="apple-touch-icon" sizes="180x180">
-<link href="https://store.united-arrows.co.jp/res/img/common/favicon_ua.ico" rel="shortcut icon" type="image/x-icon">
-<meta content="UNITED ARROWS LTD." name="author">
-<meta content="Copyright (C) UNITED ARROWS LTD. ALL RIGHTS RESERVED." name="Copyright">
-<meta name="format-detection" content="telephone=no">
-<!-- /non _HEAD_META -->
-<inject m:inject="m:doRender" m:name="_HEAD_META">
-  <!-- 追加で必要なmeta情報 : -->
-  <meta name="description" content="サンプル" />
-</inject>
-
-<!-- non _HEAD_CSS "/non _HEAD_CSS" までの下記内容は共通テンプレート側で設置されます。 -->
-  <!-- tailwind css, その他、依存ライブラリのCSSを下記4行で読み込んでいます。 -->
-  <link href="https://store.united-arrows.co.jp/res/css/common/output.css" rel="stylesheet" type="text/css">
-  <link href="https://store.united-arrows.co.jp/res/css/common/head.css" rel="stylesheet" type="text/css">
-  <link href="https://store.united-arrows.co.jp/res/css/chunk-vendors.css" rel="stylesheet" type="text/css">
-<!-- /non _HEAD_CSS -->
-<inject m:inject="m:doRender" m:name="_HEAD_CSS">
-  <!-- 追加で必要なmeta情報 : -->
-</inject>
-
-<!-- non _HEAD_SCRIPT "/non _HEAD_SCRIPT" までの下記内容は共通テンプレート側で設置されます。 -->
-  <!-- 依存ライブラリのJSおよびサイト内で共通的に使用するJSを下記3行で読み込んでいます。 -->
-  <script src="https://store.united-arrows.co.jp/res/js/chunk-vendors.js"></script>
-  <script src="https://store.united-arrows.co.jp/res/js/production/head.js"></script>
-  <script src="https://store.united-arrows.co.jp/res/js/common/session.js"></script>
-<!-- 上記JSで、ユーザ情報のJS変数への出力、GTM読み込み、dataLayerへの共通情報の出力 を実施しています。-->
-<!-- 追加のGTMへのdataLayer出力は開発要件となります。GTMの権限申請の上、開発要望提出をお願いいたします -->
-<!-- /non _HEAD_SCRIPT -->
-<inject m:inject="m:doRender" m:name="_HEAD_SCRIPT">
-</inject>
-</head>
-<body>
+<%- include('./_head.ejs') %>
   <main class="mx-auto max-w-pc-full">
-  <inject m:inject="m:doRender" m:name="_APP_MAIN">
-    <!-- ページ上部のコンテンツ：画面中央部分のコンテナ内（左右マージンあり） -->
-    <pre class="border bg-gray-200">
-      &lt;inject m:inject="m:doRender" m:name="_APP_MAIN"&gt;&lt;/inject&gt; に記載した内容。
-        ページ上部のコンテンツ：画面中央部分のコンテナ内（左右マージンあり）
-    </pre>
-  </inject>
-  </main>
-<!-- non _BODY_SCRIPT "/non _BODY_SCRIPT" までの下記内容は共通テンプレート側で設置されます。 -->
-  <!-- 依存ライブラリのJSおよびサイト内で共通的に使用するJSを下記3行で読み込んでいます。 -->
-  <script src="https://store.united-arrows.co.jp/res/js/production/body_after.js"></script>
-  <script>
-    $(function(){
-      var ua_wmk = Cookies.get('ua_wmk'),
-          ua_user_wmk = Cookies.get('ua_user_wmk'),
-          ua_item_wmk = Cookies.get('ua_item_wmk'),
-          isLogined = sessionModule.isLoggedIn(), justLogined = sessionModule.isEnteredLoggedIn();
+		<inject m:inject="m:doRender" m:name="_APP_MAIN">
+			<!-- CONTENTS START -->
+			<%- include('./_top.ejs') %>
+			<%- include('./_main1.ejs') %>
+			<%- include('./_main2.ejs') %>
+			<%- include('./_allitem.ejs') %>
+      
+			<%- include('./_foot.ejs') %>
+      <!-- CONTENTS END -->
 
-      // ログイン直後にCookie(ua_user_wmk)を保存
-      if (isLogined && justLogined) {
-        if ("01" == "01") {
-          Cookies.set('ua_user_wmk', "10M1");
-          Cookies.set('ua_wmk', "10M1");
-        } else if ("01" == "02") {
-          Cookies.set('ua_user_wmk', "10W1");
-          Cookies.set('ua_wmk', "10W1");
-        } else {
-          Cookies.set('ua_user_wmk', "ALL");
-          Cookies.set('ua_wmk', "ALL");
-        }
-      }
-    })
-  </script>
-  <!-- その他、ユーザ情報のJS変数への出力、GTM読み込み、dataLayerへの共通情報の出力 を共通レイアウト側で実施します。-->
-  <!-- 追加で GTMへのdataLayer出力を行う場合は _HEAD_SCRIPT 内またはページのメインコンテンツ内で適宜 push してください。
-       ただし、原則追加で GTMへのdataLayer出力は開発要件となります。まずはGTMの権限申請をお願いいたします -->
-<!-- /non _BODY_SCRIPT -->
-<inject m:inject="m:doRender" m:name="_BODY_SCRIPT">
-</inject>
-</body>
-</html>
+		</inject>
+	</main>
+  <%- include('./_footer.ejs') %>
+
+  
