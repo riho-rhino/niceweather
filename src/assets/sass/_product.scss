@@ -1,0 +1,103 @@
+@use './_reset';
+@use './_mixin' as *;
+@use './_common' as c;
+
+
+$pro : 700;
+
+.products{
+    margin: calc(123 / c.$spw) * 100% auto 0;
+    width: calc(700 / c.$spw) * 100%;
+    position: relative;
+    background-color: #fff;
+    padding: calc(81.77 / c.$spw) * 100% 0 calc(109 / c.$spw) * 100% 0;
+    @include pc{
+        margin: calc(280 / c.$pcw) * 100% auto 0;
+        width: calc(2280 / c.$pcw) * 100%;
+        padding: calc(140 / c.$pcw) * 100% 0 calc(189 / c.$pcw) * 100% 0;        
+    }
+}
+
+.products_inner{
+    display: flex;
+    flex-wrap: wrap;
+    @include pc{
+        width: calc(1868 / 2280) * 100%;
+        margin: 0 auto;
+        justify-content: space-between;
+        gap: calc(156 / 2280) * 100%;
+    }
+}
+.product_item{
+    width: 50%;
+    text-align: center;
+    display: block;
+    margin-top: calc(39.5 / 700) * 100%;
+    .product_ph{
+        width: 100%;
+        line-height: 0;
+    }
+    .product_name{
+        display: block;
+        font-size: calc(27 / c.$spw * 100vw);
+        line-height: 1;
+    }
+    @include pc{
+        width: calc(363.57 / 1868) * 100%;
+        margin-top: calc(52 / 2280) * 100%;
+        .product_name{
+            font-size: calc(27 / c.$pcw * 100vw);
+            margin-top: calc(52 / 322.49) * 100%;
+        }
+    }
+
+    .product_buy-wrap{
+        a{
+            color: #fff;
+            background: #000;
+            display: flex;
+            width: calc(83.1 / 350)* 100%;
+            margin: calc(20 / 350) * 100% auto 0;
+            padding: calc(6.5 / 350) * 100% 0;
+            line-height: 1;
+            vertical-align: middle;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+        }
+        .product_buy{
+            font-size: calc(26 / c.$spw * 100vw);
+            display: block;
+            
+        }
+        .buyarrow{
+            display: block;
+            position: relative;
+            display: block;
+            width: calc(5 / 83.1) * 100%;
+            &::after{
+                content: '';
+                width: 4px;
+                height: 4px;
+                border-top: solid 1px #fff;
+                border-right: solid 1px #fff;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                line-height: 0;
+                transform: translateY(-50%) rotate(45deg);
+            }
+        }
+        @include pc{
+            a{
+                width: calc(83.1 / 348.47)* 100%;
+                margin: calc(20 / 348.47) * 100% auto 0;
+                padding: calc(6.5 / 348.47) * 100% 0;
+            }
+            .product_buy{
+                font-size: min(calc(26 / c.$pcw * 100vw),13px);
+                line-height: 0.8;
+            }
+        }
+    }
+}

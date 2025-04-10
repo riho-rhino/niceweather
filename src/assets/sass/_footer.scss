@@ -1,3 +1,199 @@
 @use './_reset';
 @use './_mixin' as *;
 @use './_common' as c;
+
+.footer{
+    margin-top: calc(74 / c.$spw) * 100%;
+    @include pc{
+        margin-top: calc(52 / c.$pcw) * 100%;
+    }
+    .link_list{
+        text-align: center;
+        display: block;
+        .link{
+            margin-top: calc(63 / c.$spw) * 100%;
+            &:first-of-type{
+                margin-top: 0;
+            }
+        }
+        a{
+            color: #fff;
+            font-size: calc(30 / c.$spw * 100vw);
+        }
+        @include pc{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            vertical-align: middle;
+            width: calc(1368 / c.$pcw) * 100%;
+            margin: 0 auto;
+            justify-content: space-between;
+            .link{
+                margin: 0;
+            }
+            a{
+                color: #fff;
+                font-size: min(calc(45 / c.$spw * 100vw),27.5px);
+            }
+        }
+
+        .insta-wrap{
+            display: flex;
+            align-items: center;
+            vertical-align: middle;
+            justify-content: center;
+            gap: 5px;
+            .insta{
+                display: block;
+
+            }
+            .insta_logo{
+                display: block;
+                width: 12.5px;
+                line-height: 0;
+                @include pc{
+                    width: 16px;
+                }
+            }
+        }
+        
+    }
+
+}
+
+.footer_logo{
+    width: calc(387.83 / c.$spw) * 100%;
+    margin: calc(126 / c.$spw) * 100% auto 0;
+    position: relative;
+    @include pc{
+        width: calc(625.52 / c.$pcw) * 100%;
+        max-width: 310px;
+        margin: calc(201.5 / c.$pcw) * 100% auto 0;        
+    }
+    .logo_line{
+        position: absolute;
+        z-index: 50;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: calc(-78 / 387.83) * 100%;
+        width: 204px;
+        @include pc{
+            width: 314.5px;
+        }
+       .logo_line-1 {
+           stroke-dashoffset: 663.338623046875px;
+           stroke-dasharray: 663.338623046875px;
+           -webkit-transition: stroke-dashoffset 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.6s;
+           transition: stroke-dashoffset 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.6s;
+         }
+         .logo_line-2 {
+           stroke-dashoffset: 665.0828857421875px;
+           stroke-dasharray: 665.0828857421875px;
+           -webkit-transition: stroke-dashoffset 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.6s;
+           transition: stroke-dashoffset 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.6s;
+         }
+    } 
+    &.active{
+        .logo_line-1 {
+            stroke-dashoffset: 0;
+          }
+          .logo_line-2 {
+            stroke-dashoffset: 0;
+          }
+    }
+}
+
+.goodday{
+    position: relative;
+    z-index: 100;
+    width: calc(212 / c.$spw) * 100%;
+    margin: calc(34 / c.$spw) * 100% calc(83 / c.$spw) * 100% 0 auto;
+    line-height: 0;
+    @include pc{
+        margin: 0 auto calc(-200 / 625.52) * 100%;
+        width: calc(204 / 625.52) * 100%;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}
+.staffcredit-wrap{
+    .staff{
+        color: #fff;
+        font-size: calc(30 / c.$spw * 100vw);
+        text-align: center;
+    }
+    @include pc{
+        width: 100%;
+        .staff{
+            margin-top: calc(317 / c.$pcw) * 100%;
+            font-size: calc(30 / c.$pcw * 100vw);
+            text-align: left;
+            margin-left: calc(112 / c.$pcw) * 100%;
+        }
+    }
+    .staff-credit{
+        display: flex;
+        justify-content: left;
+        color: #fff;
+        flex-wrap: wrap;
+        margin-left: calc(80 / c.$spw) * 100%;
+        .staff-info{
+            margin-top: calc(57 / c.$spw) * 100%;
+            font-family: acumin-pro, sans-serif;
+            font-weight: 400;
+            .staff-job{
+                font-size: calc(24 / c.$spw * 100vw);
+            }
+            .staff-name{
+                font-size: calc(25 / c.$spw * 100vw);
+            }
+        }
+        .right{
+            margin-left: calc(96 / c.$spw) * 100%;
+        }
+        @include pc{
+            margin-left: calc(112 / c.$pcw) * 100%;
+            gap: calc(67.8 / c.$pcw) * 100%;
+            flex-wrap: nowrap;
+            .staff-info{
+                margin-top: calc(57 / c.$pcw) * 100%;
+                line-height: calc(27 / 19);
+                .staff-job{
+                    font-size: calc(15 / c.$pcw * 100vw);
+                    white-space: nowrap;
+                }
+                .staff-name{
+                    font-size: calc(19 / c.$pcw * 100vw);
+                    white-space: nowrap;
+                }
+            }            
+            .right{
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.copyright{
+    text-align: center;
+    color: #fff;
+    font-size: calc(24 / c.$spw * 100vw);
+    padding: calc(124 / c.$spw * 100vw) 0 calc(110 / c.$spw * 100vw);
+    @include pc{
+        font-size: min(calc(16 / c.$pcw * 100vw),8px);
+        padding: 0 calc(66 / c.$pcw) * 100%  0 0;
+        white-space: nowrap;
+    }
+}
+
+
+.footer_wrap{
+    @include pc{
+        display: flex;
+        vertical-align: bottom;
+        align-items: flex-end;
+        margin-bottom: calc(90 / c.$pcw) * 100%;
+    }
+}

@@ -1,3 +1,133 @@
 @use './_reset';
 @use './_mixin' as *;
 @use './_common' as c;
+
+.main_2{
+    padding-bottom: calc(368 / c.$spw) * 100%;
+    @include pc{
+        padding-bottom: 0;
+    }
+}
+
+.style_8{
+    margin: calc(114.9 / c.$spw) * 100% auto 0;
+    width: calc(588.77 / c.$spw) * 100%;
+    padding-bottom: calc(316 / c.$spw) * 100%;
+    @include pc{
+        margin: calc(166.5 / c.$pcw) * 100% auto 0;
+        width: calc(720 / c.$pcw) * 100%;
+        padding-bottom: 0;
+    }
+}
+.flex_wrap5{
+    display: block;
+    @include pc{
+        display: flex;
+        width: calc(1587.8 / c.$pcw) * 100%;
+        margin: calc(195.6 / c.$pcw) * 100% auto 0;
+    }
+}
+.style_9{
+    margin: calc(37 / c.$spw) * 100% auto 0;
+    width: calc(590 / c.$spw) * 100%;
+    @include pc{
+        margin: 0;
+        width: calc(1015 / 1587.8) * 100%;
+    }
+}
+.style_10{
+    margin: calc(63 / c.$spw) * 100% 0 0 auto;
+    width: calc(484 / c.$spw) * 100%;
+    padding-bottom: calc(276 / c.$spw) * 100%;
+    @include pc{
+        margin: calc(701 / 1587.8) * 100% 0 0 calc(-86 / 1587.8) * 100%;
+        padding: 0;
+        width: calc(662.02 / 1587.8) * 100%;
+    }
+}
+.style-wrap_11{
+    @include pc{
+        width: calc(1116 / c.$pcw) * 100%;
+        margin: calc(108 / c.$pcw) * 100% auto 0 ;
+        position: relative;
+    }
+}
+.style_11{
+    margin: calc(75 / c.$spw) * 100% auto 0 0;
+    width: calc(635 / c.$spw) * 100%;
+    padding-bottom: calc(294 / c.$spw) * 100%;
+    @include pc{
+        margin: 0;
+        width: calc(850 / 1116) * 100%;
+        padding-bottom: 0;
+    }
+}
+.style_12{
+    margin: calc(9.7 / c.$spw) * 100% auto 0 ;
+    width: calc(642.24 / c.$spw) * 100%;
+    @include pc{
+        margin: calc(236 / c.$pcw) * 100% auto 0 ;
+        width: calc(1100 / c.$pcw) * 100%;        
+    }
+}
+
+.style12-wrap{
+    position: relative;
+}
+
+.txtline_above,.txtline_under{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow: hidden;
+    z-index: 150;
+    .style-txtline{
+        color: c.$txt;
+        font-size: calc(28 / c.$spw * 100vw);
+        padding-right: 15px;
+        line-height: 1;
+        white-space: nowrap;
+        @include pc{
+            font-size: calc(40 / c.$pcw * 100vw);
+        }
+    }
+}
+.txtline_above{
+    .style-txtline{
+        animation: loop-text 20s linear infinite;
+    }
+}
+.txtline_under{
+    margin-top: 5%;
+    .style-txtline{
+        animation: loop-text2 20s linear infinite;
+    }
+    @include pc{
+        margin-top: 3%;
+    }
+}
+
+
+
+.pc-txtline-wrap{
+    display: none;
+    margin-top: calc(83 / c.$pcw) * 100%;
+    position: relative;
+    z-index: 100;
+    line-height: 0;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow: hidden;
+    @include pc{
+        display: flex;
+    }
+    .pc-txtline{
+        width: 432.5px;
+        min-width: 432.5px;
+        padding-right: 15px;
+        animation: loop-text 8s linear infinite;
+    }
+}

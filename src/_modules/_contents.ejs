@@ -3,10 +3,17 @@
 		<inject m:inject="m:doRender" m:name="_APP_MAIN">
 			<!-- CONTENTS START -->
 			<%- include('./_top.ejs') %>
-			<%- include('./_main1.ejs') %>
-			<%- include('./_main2.ejs') %>
-			<%- include('./_allitem.ejs') %>
-      
+      <section class="section main_1">
+        <%- include('./_main1.ejs') %>
+      </section>
+      <section class="section main_2">
+        <%- include('./_main2.ejs') %>
+      </section>
+      <%- include('./_parallax.ejs') %>
+      <section class="section products">
+			  <%- include('./_product.ejs') %>
+      </section>
+
 			<%- include('./_foot.ejs') %>
       <!-- CONTENTS END -->
 
