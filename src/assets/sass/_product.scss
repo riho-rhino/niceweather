@@ -6,7 +6,7 @@
 $pro : 700;
 
 .products{
-    margin: calc(123 / c.$spw) * 100% auto 0;
+    margin: calc(200 / c.$spw) * 100% auto 0;
     width: calc(700 / c.$spw) * 100%;
     position: relative;
     background-color: #fff;
@@ -15,6 +15,20 @@ $pro : 700;
         margin: calc(280 / c.$pcw) * 100% auto 0;
         width: calc(2280 / c.$pcw) * 100%;
         padding: calc(140 / c.$pcw) * 100% 0 calc(189 / c.$pcw) * 100% 0;        
+    }
+}
+
+.product_kazari{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(290 / 700) * 100%;
+    line-height: 0;
+    margin-top: calc(-95 / 700) * 100%;
+    margin-left: 3%;
+    @include pc{
+        width: calc(425 / 2280) * 100%;  
+        margin-top: -7%;      
     }
 }
 

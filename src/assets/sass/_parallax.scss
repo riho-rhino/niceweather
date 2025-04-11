@@ -4,19 +4,12 @@
 
 .parallax{
     width: 100%;
-    height: 0;
-    padding-top: calc(410.21 / c.$spw) * 100%;
+    height: calc(410.21px / 2);
     margin-top: calc(36.75 / c.$spw) * 100%;
     margin-bottom: calc(20 / c.$spw) * 100%;
     overflow: hidden;
-    position: relative;
-    .parallax_inner{
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-    }
     @include pc{
-        padding-top: calc(940 / c.$pcw) * 100%;
+        height: calc(940px / 2);
         margin-top: calc(280.8 / c.$pcw) * 100%;
         margin-bottom: calc(86.7 / c.$pcw) * 100%;
     }

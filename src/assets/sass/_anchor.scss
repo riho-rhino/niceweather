@@ -1,0 +1,32 @@
+@use './_reset';
+@use './_mixin' as *;
+@use './_common' as c;
+
+
+.pc-anchor{
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 1000;
+    transform: translateY(-50%);
+    margin-left: calc(118 / c.$pcw) * 100%;
+    max-width: 21px;
+    line-height: 0;
+    width: calc(37 / c.$pcw) * 100%;
+    opacity: 0;
+    transition: all .3s ease;
+    .anchor_product{
+        margin-top: calc(156 / 37) * 100%;
+    }
+    a{
+        display: block;
+        color: #fff;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        font-size: calc(30 / c.$pcw * 100vw);
+        
+    }
+    &.show{
+        opacity: 1;
+    }
+}

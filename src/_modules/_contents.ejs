@@ -1,21 +1,35 @@
 <%- include('./_head.ejs') %>
   <main class="mx-auto max-w-pc-full">
 		<inject m:inject="m:doRender" m:name="_APP_MAIN">
-			<!-- CONTENTS START -->
-			<%- include('./_top.ejs') %>
-      <section class="section main_1">
-        <%- include('./_main1.ejs') %>
-      </section>
-      <section class="section main_2">
-        <%- include('./_main2.ejs') %>
-      </section>
-      <%- include('./_parallax.ejs') %>
-      <section class="section products">
-			  <%- include('./_product.ejs') %>
-      </section>
+      <div class="nw_wrapper">
+        <div class="pc-anchor">
+          <div class="achor">
+            <a href="#look">
+              LOOK
+            </a>
+          </div>
+          <div class="achor anchor_product">
+            <a href="#product">
+              PRODUCT
+            </a>
+          </div>
+        </div>
+        <!-- CONTENTS START -->
+        <%- include('./_top.ejs') %>
+        <section class="section main_1" id="look">
+          <%- include('./_main1.ejs') %>
+        </section>
+        <section class="section main_2">
+          <%- include('./_main2.ejs') %>
+        </section>
+        <%- include('./_parallax.ejs') %>
+        <section class="section products" id="product">
+          <%- include('./_product.ejs') %>
+        </section>
 
-			<%- include('./_foot.ejs') %>
-      <!-- CONTENTS END -->
+        <%- include('./_foot.ejs') %>
+        <!-- CONTENTS END -->
+      </div>
 
 		</inject>
 	</main>
